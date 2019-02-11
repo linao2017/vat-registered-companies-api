@@ -29,6 +29,7 @@ import scala.concurrent.Future
 class DefinitionController @Inject()(appContext: AppContext) extends BaseController {
 
   def get(): Action[AnyContent] = Action {
+    // TODO pass white listed app ids here (Application ID on dev hub)
     Ok(txt.definition(appContext.apiContext)).as(ContentTypes.withCharset(MimeTypes.JSON)(Codec.utf_8))
   }
 
